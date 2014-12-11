@@ -1,7 +1,15 @@
-<%= render @post.categories %>
+<p class="pull-right">
+  [<%= link_to 'edit this post', edit_post_path(@post) %>]
+</p>
 
-<%= render 'shared/content_title', title: @post.title %>
+<p>
+  <%= render @post.categories %>
+</p>
 
-<p><%= @post.description %></p>
-
-
+<%= render "shared/content_title", title: @post.title %>
+<div>
+  <strong>Url:</strong> <%= @post.url %>
+</div>
+<div>
+  <strong>Description:</strong> <%= @post.description %>
+</div>

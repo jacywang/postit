@@ -1,0 +1,18 @@
+<!-- <h4>Pure html</h4>
+<form action="/posts" method="post">
+  Title: <input type="text" name="title">
+  <br>
+  <input type="submit" class="btn btn-primary">
+</form>
+
+<h4>Rails form helpers</h4>
+<%= form_tag '/posts' do %>
+  <%= label_tag :title, "Input your title:" %>
+  <%= text_field_tag :title %>
+  <br>
+  <%= submit_tag "Creat Post", class: "btn btn-primary" %>
+<% end %> -->
+
+<%= render "shared/content_title", title: "Creat a new post" %>
+
+<%= render "form" %>
