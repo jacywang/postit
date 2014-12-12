@@ -1,15 +1,4 @@
-<% if @post.errors.any? %>
-  <div class="row">
-    <div class="alert alert-error span8">
-      <h5>Please fix the following errors:</h5>
-      <% @post.errors.full_messages.each do |msg| %>
-        <ul>
-          <li><%= msg %></li>
-        </ul>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+<%= render "shared/error", obj: @post %>
 
 <div class="well">
   <%= form_for @post do |f| %>
