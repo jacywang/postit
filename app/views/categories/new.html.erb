@@ -1,0 +1,25 @@
+<%= render "shared/content_title", title: "Create a new category" %>
+
+<% if @category.errors.any? %>
+  <div class="row">
+    <div class="alert alert-error span8">
+      <h5>Please fix the following errors:</h5>
+      <% @category.errors.full_messages.each do |msg| %>
+        <ul>
+          <li><%= msg %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div class="well">
+  <%= form_for @category do |f| %>
+    <div class="content-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <%= f.submit "Creat Category", class: "btn btn-success btn-primary" %>
+  <% end %>
+</div>
