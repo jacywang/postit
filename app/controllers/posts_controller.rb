@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_creator, only: [:edit, :update]
 
   def index
     @posts = Post.all 
@@ -15,8 +17,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.creator = User.first
-    binding.pry
+    @post.creator = current_user
     if @post.save
       flash[:notice] = "Your new post was created."
       redirect_to posts_path
@@ -43,5 +44,12 @@ class PostsController < ApplicationController
 
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def require_same_creator
+      if current_user != @post.creator
+        flash[:error] = "This action is not allowed."
+        redirect_to root_path
+      end
     end
 end
