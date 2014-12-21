@@ -18,7 +18,7 @@
       <%= render "posts/post", post: post %>
     <% end %>
   <% elsif %>
-    <% @user.comments.each do |comment| %>
+    <% @user.comments.sort_by{ |x| x.total_comment_votes }.reverse.each do |comment| %>
       <%= render "comments/comment", comment: comment, show_post: true %>
     <% end %>
   <% end %>
