@@ -1,5 +1,5 @@
 <% if @vote.valid? %>
-  $("#comment_<%= @comment.id %>_vote").html("<%= @comment.total_comment_votes %> votes");
+  $("#comment_<%= @comment.id %>_vote").html("<%= @comment.total_votes %> votes");
 <% else %>
   alert("You can only vote for this comment once!");
 <% end %>
