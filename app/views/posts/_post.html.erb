@@ -19,7 +19,7 @@
     <h4><%= link_to post.title, post %></h4>
     <p><%= post.description %></p>
     <p>
-      <span class='quiet'>posted by</span> <%= link_to post.creator.username, user_path(post.creator) %> at <small><%= post.created_at %></small>.
+      <span class='quiet'>posted by</span> <%= link_to post.creator.username, user_path(post.creator) %> at <small><%= display_time(post.created_at) %></small>.
     </p>
     <small>
       <span><%= link_to "#{post.comments.size} comments", post %></span>

@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.save
+    if @user.update(user_params)
       flash[:notice] = "New profile was saved."
       redirect_to user_path
     else
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:username, :password, :time_zone)
     end
 
     def set_user
