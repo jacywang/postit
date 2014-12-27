@@ -13,6 +13,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'voteable_jacy'
+# gem 'voteable_jacy', '= 0.0.1', path: '/Users/jianwang/Dropbox/TeaLeaf/rapid_prototyping_with_ruby_on_rails/lesson_one/voteable-gem'
+gem 'sluggable_jacy'
 
 group :doc do
   gem 'sdoc', require: false

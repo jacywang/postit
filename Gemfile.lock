@@ -102,6 +102,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     slop (3.6.0)
+    sluggable_jacy (0.0.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -125,6 +126,7 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    voteable_jacy (0.0.0)
 
 PLATFORMS
   ruby
@@ -142,6 +144,8 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 4.0.0)
   sdoc
+  sluggable_jacy
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
+  voteable_jacy
