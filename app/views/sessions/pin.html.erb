@@ -1,0 +1,13 @@
+<%= render "shared/content_title", title: "Two Factor Authentication" %>
+
+<p>Please input the six-digit number sent to your phone.</p>
+<div class="well">
+  <%= form_tag "/pin" do %>
+    <div class="content-group">
+      <%= label_tag :pin, "Pin Number" %>
+      <%= text_field_tag :pin, params[:pin] || "" %>
+    </div>
+
+    <%= submit_tag "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
